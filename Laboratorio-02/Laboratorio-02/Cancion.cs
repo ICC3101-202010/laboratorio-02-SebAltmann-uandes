@@ -8,8 +8,12 @@ namespace Laboratorio02
         private string artista;
         private string genero;
 
-        public Cancion()
+        public Cancion(string nombre, string album, string artista, string genero)
         {
+            this.nombre = nombre;
+            this.album = album;
+            this.artista = artista;
+            this.genero = genero;
         }
     }
 }
