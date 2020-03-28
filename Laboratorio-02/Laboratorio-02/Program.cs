@@ -6,7 +6,9 @@ namespace Laboratorio02
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Cancion TEST = new Cancion("A", "B", "C", "D");
+
+            Console.WriteLine(TEST.Informacion());
         }
     }
 }

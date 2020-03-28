@@ -15,5 +15,10 @@ namespace Laboratorio02
             this.artista = artista;
             this.genero = genero;
         }
+
+        public String Informacion()
+        {
+            return "genero: " + genero + ", artista: " + artista + ", album: " + album + ", nombre: " + nombre;
+        }
     }
 }
