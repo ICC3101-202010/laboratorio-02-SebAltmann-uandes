@@ -93,11 +93,17 @@ namespace Laboratorio02
             } else if (CPC.Count == 1)
             {
                 Console.WriteLine("La siguiente canción cumple con los requisitos de la búsqueda:");
-                Console.WriteLine(CPC);
+                foreach (Cancion Song in CPC)
+                {
+                    Console.WriteLine(Song.Informacion());
+                }
             } else
             {
                 Console.WriteLine("Las siguientes canciones cumplen con los requisitos de la búsqueda:");
-                Console.WriteLine(CPC);
+                foreach (Cancion Song in CPC)
+                {
+                    Console.WriteLine(Song.Informacion());
+                }
             }
             return CPC;
         }
