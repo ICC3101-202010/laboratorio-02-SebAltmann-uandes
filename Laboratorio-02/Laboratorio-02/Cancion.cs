@@ -20,5 +20,25 @@ namespace Laboratorio02
         {
             return "genero: " + genero + ", artista: " + artista + ", album: " + album + ", nombre: " + nombre;
         }
+
+        public String GetName()
+        {
+            return nombre;
+        }
+
+        public String GetAlbum()
+        {
+            return album;
+        }
+
+        public String GetArtist()
+        {
+            return artista;
+        }
+
+        public String GetGenre()
+        {
+            return genero;
+        }
     }
 }
