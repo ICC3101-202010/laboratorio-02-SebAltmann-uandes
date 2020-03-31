@@ -5,6 +5,7 @@ namespace Laboratorio02
     public class Espotifai
     {
         private List<Cancion> SongList = new List<Cancion>();
+        private List<Playlist> AllPlaylists = new List<Playlist>();
 
         public Espotifai()
         {
@@ -106,6 +107,44 @@ namespace Laboratorio02
                 }
             }
             return CPC;
+        }
+
+        public bool GenerarPlaylist(String criterio, String valorCriterio, String nombrePlaylist)
+        {
+            if (AllPlaylists.Count > 0)
+            {
+                foreach (Playlist playlist in AllPlaylists)
+                {
+                    if (playlist.P_GetName() == nombrePlaylist)
+                    {
+                        Console.WriteLine("Ya existe una playlist con ése nombre.");
+                        return false;
+                    }
+                }
+            }
+
+            if (CancionesPorCriterio(criterio, valorCriterio).Count == 0)
+            {
+                Console.WriteLine("No existen canciones que cumplan los requisitos.");
+                return false;
+            }
+            Playlist npl = new Playlist(nombrePlaylist, CancionesPorCriterio(criterio, valorCriterio));
+            AllPlaylists.Add(npl);
+            return true;
+        }
+
+        public String VerMisPlaylists()
+        {
+            if (AllPlaylists.Count == 0)
+            {
+                return "No existen playlists.";
+            }
+            String vmp = "";
+            foreach(Playlist playlist in AllPlaylists)
+            {
+                vmp += playlist.P_Informacion();
+            }
+            return vmp;
         }
     }
 }
